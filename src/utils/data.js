@@ -1,4 +1,4 @@
-{
+export const transactionData = {
     "trip_financials": [
         {
             "id": 2867462,
@@ -28,13 +28,13 @@
         {
             "id": 199069,
             "datetime": "2022-04-20T14:57:09.959629+04:30",
-            "amount": -100000,
+            "amount": 100000,
             "description": null
         },
         {
             "id": 199070,
             "datetime": "2022-04-18T16:58:47.678934+04:30",
-            "amount": -7140000,
+            "amount": 7140000,
             "description": null
         }
     ],
@@ -55,4 +55,4 @@
             "end_date": "2022-07-07"
         }
     ]
-}
+} 
