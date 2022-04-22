@@ -1,4 +1,4 @@
-{
+export const transactionData = {
     "trip_financials": [
         {
             "id": 2867462,
@@ -55,4 +55,4 @@
             "end_date": "2022-07-07"
         }
     ]
-}
+} 

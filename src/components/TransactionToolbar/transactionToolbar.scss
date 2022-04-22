@@ -1,0 +1,7 @@
+@import '../../assets/styles/variables/index.scss';
+
+.transaction-toolbar{
+    @include j-sb;
+    @include a-c;
+    margin-bottom: 25px;
+}

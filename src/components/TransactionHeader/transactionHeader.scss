@@ -1,0 +1,11 @@
+@import '../../assets/styles/variables/index.scss';
+
+.transaction-header{
+    @include a-c;
+    height: 50px;
+    padding: 0 25px;
+    background-color: $bg_gray;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+}
