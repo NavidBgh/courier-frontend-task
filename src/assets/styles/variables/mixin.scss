@@ -1,14 +1,19 @@
 @mixin j-c {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 @mixin j-sb {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin j-fe {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @mixin a-c {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }

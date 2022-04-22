@@ -1,11 +1,45 @@
-@import '../../assets/styles/variables/index.scss';
+@import "../../assets/styles/variables/index.scss";
 
-.transaction-row{
-    border-bottom: 1px solid $bg_gray;
-    padding: 25px;
+.transaction-row {
+  border-bottom: 1px solid $bg_gray;
+  padding: 25px;
 
-    &:last-child{
-        border-bottom: none;
-        margin-bottom: 25px;
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 25px;
+  }
+
+  &__type {
+    @include j-sb;
+    @include a-c;
+    font-size: 13px;
+    margin-bottom: 5px;
+
+    &__title {
+      padding: 5px 15px;
+      border-radius: 50px;
+      background-color: $bg_yellow;
     }
+
+    &__price {
+      &.deposit {
+        color: $success;
+      }
+
+      &.withdraw {
+        color: $failed;
+      }
+    }
+  }
+
+  &__detail {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  &__date {
+    @include j-fe;
+    font-size: 12px;
+    color: $gray;
+  }
 }
