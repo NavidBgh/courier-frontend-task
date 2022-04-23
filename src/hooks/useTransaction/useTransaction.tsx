@@ -41,6 +41,7 @@ export const useTransaction = () => {
     const res = getAllTransactionData(data);
     setAllTransactions(res);
     transactionDispatch({ type: "transaction/update", payload: res });
+    // eslint-disable-next-line
   }, []);
   
   const searchHandler = (value: string) => {
