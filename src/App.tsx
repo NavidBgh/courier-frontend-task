@@ -1,4 +1,4 @@
-import { Transactions } from "./pages";
+import { Transactions } from "./pages/Transactions";
 import { TransactionProvider } from "./providers/TransactionsProvider";
 
 const App = () => {
