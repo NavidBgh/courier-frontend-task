@@ -1,6 +1,6 @@
 import { transactionInitialState } from "./InitialState";
 
-export const transactionReducer = (state = transactionInitialState, action: any) => {
+export const transactionReducer = (state: {} = transactionInitialState, action: any) => {
     switch (action.type) {
         case 'transaction/update':
             return {

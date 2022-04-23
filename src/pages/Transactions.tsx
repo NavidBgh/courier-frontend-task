@@ -16,7 +16,7 @@ export const Transactions = () => {
         <React.Fragment>
           <TransactionHeader date={transactionsList.date} />
           <div>
-            {transactionsList.transactions.map((transaction: any) => (
+            {transactionsList.transactions.map((transaction: {}) => (
               <TransactionRow transactionData={transaction} />
             ))}
           </div>
