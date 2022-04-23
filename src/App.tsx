@@ -1,8 +1,11 @@
 import { Transactions } from "./pages";
+import { TransactionProvider } from "./providers/TransactionsProvider";
 
 const App = () => {
   return (
-    <Transactions />
+    <TransactionProvider>
+      <Transactions />
+    </TransactionProvider>
   );
 };
 

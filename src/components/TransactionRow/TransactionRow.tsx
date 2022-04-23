@@ -62,7 +62,7 @@ export const TransactionRow = ({ ...props }: any) => {
       </div>
 
       <div className="transaction-row__date">
-        {moment(props.transactionData.date, "YYYY/MM/DD")
+        {moment(props.transactionData.date, "YYYY/MM/DDTHH:mm:ss")
           .locale("fa")
           .format("HH:mm، YYYY/MM/DD")}
       </div>
