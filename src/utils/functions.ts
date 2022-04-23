@@ -1,5 +1,4 @@
 export const getAllTransactionData = (data: any[]): any[] => {
-    // this gives an object with dates as keys
     const groups = data.reduce((groups, transaction) => {
         const date = transaction.date?.split('T')[0];
         if (!groups[date]) {
@@ -9,7 +8,6 @@ export const getAllTransactionData = (data: any[]): any[] => {
         return groups;
     }, {});
 
-    // Edit: to add it in the array format instead
     const groupArrays = Object.keys(groups).map((date) => {
         return {
             date,
@@ -20,11 +18,23 @@ export const getAllTransactionData = (data: any[]): any[] => {
     return groupArrays;
 }
 
-export const filterTransactions = (data: any[], filterType: string): any[] => {
-    const result = data.map(element =>
-        element.transactions?.filter((el: any) => (
-            el.type === filterType
-        ))
+export const filterTransactions = (data: any[], filterType: string, searchValue: string = ''): any[] => {
+    const arrayReturned = data.map(element =>
+        element.transactions?.filter((el: any) => {
+            if (filterType === 'search') {
+                return el.driver?.includes(searchValue);
+            } else {
+                return el.type === filterType;
+            }
+        })
     );
-    return result;
+
+    let result: any[] = [];
+    arrayReturned.forEach((element) => {
+        element.forEach((el: any) => {
+            result.push(el)
+        });
+    });
+
+    return getAllTransactionData(result);
 }
