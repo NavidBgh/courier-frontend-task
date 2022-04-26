@@ -15,26 +15,41 @@ export const getAllTransactionData = (data: any[]): any[] => {
         };
     });
 
-    return groupArrays;
-}
-
-export const filterTransactions = (data: any[], filterType: string, searchValue: string = ''): any[] => {
-    const arrayReturned = data.map(element =>
-        element.transactions?.filter((el: any) => {
-            if (filterType === 'search') {
-                return el.driver?.includes(searchValue);
-            } else {
-                return el.type === filterType;
-            }
-        })
-    );
-
-    let result: any[] = [];
-    arrayReturned.forEach((element) => {
-        element.forEach((el: any) => {
-            result.push(el)
+    const result: any = [];
+    groupArrays.forEach((groupObj: { date: string, transactions: any[] }) => {
+        result.push({ date: groupObj.date, type: 'date' });
+        groupObj.transactions.forEach(transaction => {
+            result.push(transaction);
         });
     });
 
-    return getAllTransactionData(result);
+    return result;
+}
+
+export const filterTransactions = (data: any[], filterType: string, searchValue: string = ''): any[] => {
+    const arrayReturned = data.filter((el: any) => {
+        if (filterType === 'search') {
+            return el.driver?.includes(searchValue);
+        } else {
+            return el.type === filterType;
+        }
+    });
+    // const arrayReturned = data.map(element =>
+    //     element.transactions?.filter((el: any) => {
+    //         if (filterType === 'search') {
+    //             return el.driver?.includes(searchValue);
+    //         } else {
+    //             return el.type === filterType;
+    //         }
+    //     })
+    // );
+
+    // let result: any[] = [];
+    // arrayReturned.forEach((element) => {
+    //     element.forEach((el: any) => {
+    //         result.push(el)
+    //     });
+    // });
+
+    return getAllTransactionData(arrayReturned);
 }
