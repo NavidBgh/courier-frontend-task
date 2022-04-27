@@ -80,7 +80,7 @@ export const useTransaction = () => {
   return {
     filter: (type: string) => filterHandler(type),
     search: (searchValue: string) => searchHandler(searchValue),
-    transaction: transactionState.transaction,
-    filterType: transactionState.type,
+    transaction: transactionState?.transaction,
+    filterType: transactionState?.type,
   };
 };

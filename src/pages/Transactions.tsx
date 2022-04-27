@@ -1,4 +1,3 @@
-import React from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { FixedSizeList as List } from "react-window";
 import { Container } from "../components/Container";
@@ -34,7 +33,7 @@ export const Transactions = () => {
               direction="rtl"
               height={height}
               itemCount={transaction.length}
-              itemSize={100}
+              itemSize={105}
               width={width}
             >
               {Row}
